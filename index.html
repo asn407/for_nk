@@ -356,21 +356,20 @@ code {
 
 <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
 </head>
-<body>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.css" integrity="sha384-6LkG2wmY8FK9E0vU9OOr8UvLwsaqUg9SETfpq4uTCN1agNe8HRdE9ABlk+fVx6gZ" crossorigin="anonymous">
-	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.js" integrity="sha384-31El76TwmbHj4rF9DyLsygbq6xoIobG0W+jqXim+a3dU9W53tdH3A/ngRPxOzzaB" crossorigin="anonymous"></script>
-	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
-	<script>
-	 document.addEventListener("DOMContentLoaded", () => {
-	   renderMathInElement(document.body, {
-		 delimiters: [
-		   { left: "$$", right: "$$", display: true },
-		   { left: "$", right: "$", display: false }
-		 ]
-	   });
-	 });
-	</script>
-	
+<body><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.css" integrity="sha384-6LkG2wmY8FK9E0vU9OOr8UvLwsaqUg9SETfpq4uTCN1agNe8HRdE9ABlk+fVx6gZ" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.js" integrity="sha384-31El76TwmbHj4rF9DyLsygbq6xoIobG0W+jqXim+a3dU9W53tdH3A/ngRPxOzzaB" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+<script>
+ document.addEventListener("DOMContentLoaded", () => {
+   renderMathInElement(document.body, {
+     delimiters: [
+       { left: "$$", right: "$$", display: true },
+       { left: "$", right: "$", display: false }
+     ]
+   });
+ });
+</script>
+
   <script>
     mermaid.initialize({
       startOnLoad: true,
@@ -412,11 +411,11 @@ $$
 「合成関数の微分法」という公式は，<strong>1つの複雑な関数</strong>を，<strong>複数の単純な関数</strong>に<strong>分解</strong>し，微分を楽に行うために活用できる．<br>
 今回もその例に当てはまるので，その公式を活用する．
 $$
-\dfrac{df(g(x))}{dx} = \dfrac{df(g(x))}{dg(x)}\cdot\dfrac{dg(x)}{dx}
+\dfrac{df(g(x))}{dx}=\dfrac{df(g(x))}{dg(x)}\cdot\dfrac{dg(x)}{dx}
 $$
 $g(x)$ という文字がイカツイなら，この $g(x)$ を $A$ という文字に置き換えれば分かりやすいかもしれない．
 $$
-\dfrac{df(A)}{dx} = \dfrac{df(A)}{dA}\cdot\dfrac{dA}{dx}
+\dfrac{df(A)}{dx}=\dfrac{df(A)}{dA}\cdot\dfrac{dA}{dx}
 $$
 ここで， $\dfrac{df(A)}{dA}$ が何を表すのか考えて欲しい．</p>
 <p>「関数 $f$ に $A$ を代入したものを $A$ で微分する」</p>
@@ -428,6 +427,7 @@ $$
 \dfrac{df(A)}{dA}&amp;=\dfrac{1}{A}\cr\cr
 \dfrac{df(x)}{dx}&amp;=\dfrac{1}{x}\cr\cr
 \dfrac{df(t)}{dt}&amp;=\dfrac{1}{t}\cr\cr
+\dfrac{df(\tan x)}{d\tan x}&amp;=\dfrac{1}{\tan x}\cr\cr
 \dfrac{df(g(x))}{dg(x)}&amp;=\dfrac{1}{g(x)}
 \end{align*}
 $$
