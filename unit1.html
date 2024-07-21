@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NK</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<script src="katex_setup.js"></script>
+<h1>NKのために</h1>
+<a href="index.html">HOME</a>
+<h1>大問１</h1>
+次の関数を微分せよ．
+<h2>(1)</h2>
+$$
+\log |\tan x|
+$$
+<h3>考え方</h3>
+いきなり $\log |\tan x|$ を $x$ で微分するのは難しい（そもそもできない）ので，問題を分割する．
+$$
+\begin{align*}
+f(x)&=\log |x|\cr
+g(x)&=\tan x
+\end{align*}
+$$
+上記2つの微分なら問題なくできる．<br>
+※ $\log |x|$，$\sin x$，$\cos x$，$\tan x$ の微分は<span style="color: red;">暗記必須</span>．
+$$
+\begin{align*}
+f^{\prime}(x)&=\dfrac{1}{x}\cr
+g^{\prime}(x)&=\dfrac{1}{{\cos^2 x}}
+\end{align*}
+$$
+「合成関数の微分法」という公式は，<b>1つの複雑な関数</b>を，<b>複数の単純な関数</b>に<b>分解</b>し，微分を楽に行うために活用できる．<br>
+今回もその例に当てはまるので，その公式を活用する．
+$$
+\dfrac{df(g(x))}{dx}=\dfrac{df(g(x))}{dg(x)}\cdot\dfrac{dg(x)}{dx}
+$$
+$g(x)$ という文字がイカツイなら，この $g(x)$ を $A$ という文字に置き換えれば分かりやすいかもしれない．
+$$
+\dfrac{df(A)}{dx}=\dfrac{df(A)}{dA}\cdot\dfrac{dA}{dx}
+$$
+ここで， $\dfrac{df(A)}{dA}$ が何を表すのか考えて欲しい．<br><br>
+「関数 $f$ に $A$ を代入したものを $A$ で微分する」<br><br>
+それはつまり，「関数 $f$ に $x$ を代入したものを $x$ で微分する」と言い換えたって，行う操作は全く変わらないはず！！（文字が $A$ から $x$ に変わっただけ）<br><br>
+つまり $\dfrac{df(A)}{dA}$ だろうが $\dfrac{df(x)}{dx}$ だろうが $\dfrac{df(t)}{dt}$ だろうが $\dfrac{df(\tan x)}{d\tan x}$ だろうが $\dfrac{df(g(x))}{dg(x)}$ だろうがみんな揃って以下の計算結果になる．<br><br>
+※今は $f(x)=\log |x|$ としているため，
+$$
+\begin{align*}
+\dfrac{df(A)}{dA}&=\dfrac{1}{A}\cr\cr
+\dfrac{df(x)}{dx}&=\dfrac{1}{x}\cr\cr
+\dfrac{df(t)}{dt}&=\dfrac{1}{t}\cr\cr
+\dfrac{df(\tan x)}{d\tan x}&=\dfrac{1}{\tan x}\cr\cr
+\dfrac{df(g(x))}{dg(x)}&=\dfrac{1}{g(x)}
+\end{align*}
+$$
+とにかく， $\dfrac{df(\Box)}{d\Box}$ ならばいつもの微分法が使えるということ．<br>
+これが「合成関数の微分法」の強みと言える．<br><br>
+その強みを扱うためにも，複雑な式に遭遇したら $\dfrac{df(\Box)}{d\Box}$ を完成させるための $\Box$ が何であるかを探す．<br><br>
+こんなのはただのパズルゲームであって，難しいことは何もない．<br>
+※ $\Box$ は $\triangle$ に関する関数（ $\Box$ は $\triangle$ で表せる式）
+$$
+\dfrac{df(\Box)}{d\triangle}=\dfrac{df(\Box)}{d\Box}\cdot\dfrac{d\Box}{d\triangle}
+$$
+分数の約分と同じように， $d\Box$ が消えるような微分が「合成関数の微分法」と考えることもできる．
+<h3>解法</h3>
+$$
+\begin{align*}
+\dfrac{d\log |\tan x|}{dx}&=\dfrac{d\log |\tan x|}{d\tan x}\cdot\dfrac{d\tan x}{dx}\cr\cr
+&=\dfrac{1}{\tan x}\cdot\dfrac{1}{\cos^2 x}\cr\cr
+&=\dfrac{\cos x}{\sin x}\cdot\dfrac{1}{\cos^2 x}\cr\cr
+&=\dfrac{1}{\sin x\cos x}
+\end{align*}
+$$
+<h2>(2)</h2>
+$$
+\dfrac{x^3+2}{x+1}
+$$
+<h3>考え方</h3>
+分子と分母の微分をそれぞれ行い，その結果を用いて商の微分を行う．<br><br>
+だけ．正直分数の微分は公式ゲーム．<br>
+<span style="color: red;">絶対暗記</span>．
+$$
+\bigg(\dfrac{f(x)}{g(x)}\bigg)^{\prime}=\dfrac{f^{\prime}(x)g(x)-f(x)g^{\prime}(x)}{g(x)^2}
+$$
+<h3>解法</h3>
+$$
+\begin{align*}
+\bigg(\dfrac{x^3+2}{x+1}\bigg)^{\prime}&=\dfrac{(x^3+2)^{\prime}(x+1)-(x^3+2)(x+1)^{\prime}}{(x+1)^2}\cr\cr
+&=\dfrac{3x^2(x+1)-(x^3+2)\cdot1}{(x+1)^2}\cr\cr
+&=\dfrac{3x^3+3x^2-x^3-2}{(x+1)^2}\cr\cr
+&=\dfrac{2x^3+3x^2-2}{(x+1)^2}
+\end{align*}
+$$
+<h2>(3)</h2>
+$$
+xe^{-2x}
+$$
+<h3>考え方</h3>
+ここでは何が $\Box$ になるか（簡単な関数は何かについて）を考える．<br>
+思い浮かぶのは，以下の3つの式．
+$$
+\begin{align*}
+f(x)&=x\cr
+g(x)&=e^x\cr
+h(x)&=-2x
+\end{align*}
+$$
+上記3つの微分なら問題なくできる．
+$$
+\begin{align*}
+f^{\prime}(x)&=1\cr
+g^{\prime}(x)&=e^x\cr
+h^{\prime}(x)&=-2
+\end{align*}
+$$
+$e^{-2x}$ は $e^x$ と $-2x$ の合成関数（ $g(h(x))$ ）であるので，「合成関数の微分法」が使える．<br>
+積の微分法も正直公式ゲームなので，<span style="color: red;">絶対暗記</span>．
+$$
+\big(f(x)g(x)\big)^{\prime}=f^{\prime}(x)g(x)+f(x)g^{\prime}(x)
+$$
+<h3>解法</h3>
+$$
+\begin{align*}
+\big(xe^{-2x}\big)^{\prime}&=1\cdot e^{-2x}+x(e^{-2x})^{\prime}\cr\cr
+&=1\cdot e^{-2x}+x\bigg(\dfrac{de^{-2x}}{d(-2x)}\cdot\dfrac{d(-2x)}{dx}\bigg)\cr\cr
+&=e^{-2x}+x(e^{-2x}\cdot(-2))\cr\cr
+&=e^{-2x}-2xe^{-2x}\cr\cr
+&=e^{-2x}(1-2x)
+\end{align*}
+$$
+<h2>(4)</h2>
+$$
+e^{\arcsin x}
+$$
+<h3>考え方</h3>
+$\arcsin x$ は $\sin x$ の逆関数である．<br>
+$$
+y=\arcsin x\quad\Leftrightarrow\quad x=\sin y
+$$
+$\arcsin x$， $\arccos x$， $\arctan x$ の微分は<span style="color: red;">暗記必須</span>
+$$
+\begin{align*}
+(\arcsin x)^{\prime}&=\dfrac{1}{\sqrt{1-x^2}}\cr\cr
+(\arccos x)^{\prime}&=-\dfrac{1}{\sqrt{1-x^2}}\cr\cr
+(\arctan x)^{\prime}&=\dfrac{1}{1+x^2}
+\end{align*}
+$$
+$e^{\arcsin x}$ は $e^x$ と $\arcsin x$ の合成関数なので，これまでの知識を使うと問題なくできる．
+<h3>解法</h3>
+$$
+\begin{align*}
+\big(e^{\arcsin x}\big)^{\prime}&=\dfrac{de^{\arcsin x}}{d\arcsin x}\cdot\dfrac{d\arcsin x}{dx}\cr\cr
+&=e^{\arcsin x}\cdot\dfrac{1}{\sqrt{1-x^2}}\cr\cr
+&=\dfrac{e^{\arcsin x}}{\sqrt{1-x^2}}
+\end{align*}
+$$
+以上．
+</body>
+</html>
