@@ -44,8 +44,8 @@ renderMathInElement(document.body, {
 このくらいの微積は解けるようになっても良いんじゃないかと（解けてほしいなぁという願望も含まれている）．<br><br>
 そんなに難しい問題じゃないから，最初は分からなくても数回繰り返し解くだけですぐ分かるようになると思う．
 <h2>最終目標</h2>
-何も見なくても新規問題が全問解ける．<br><br>
-まあそもそも期末試験解かないといけないし．<br>
+「何も見なくても新規問題が全問解ける」<br><br>
+まあそもそも期末試験解かないといけないし()．<br>
 それくらい可能なレベルの問題ばかりなので，めげずに取り組んでほしい．<br><br>
 分からないときはいつでもLINE（電話対応可）してくれ^ω^
 <h1>大問１</h1>
@@ -63,7 +63,7 @@ g(x)&=\tan x
 \end{align*}
 $$
 上記2つの微分なら問題なくできる．<br>
-※ $\log |x|$，$\sin x$，$\cos x$，$\tan x$ の微分は暗記必須
+※ $\log |x|$，$\sin x$，$\cos x$，$\tan x$ の微分は<span style="color: red;">暗記必須</span>
 $$
 \begin{align*}
 f^{\prime}(x)&=\dfrac{1}{x}\cr
@@ -136,5 +136,64 @@ $$
 xe^{-2x}
 $$
 <h3>考え方</h3>
+ここでは何が $\Box$ になるか（簡単な関数は何かについて）を考える．<br>
+思い浮かぶのは，以下の3つの式．
+$$
+\begin{align*}
+f(x)&=x\cr
+g(x)&=e^x\cr
+h(x)&=-2x
+\end{align*}
+$$
+上記3つの微分なら問題なくできる．
+$$
+\begin{align*}
+f^{\prime}(x)&=1\cr
+g^{\prime}(x)&=e^x\cr
+h^{\prime}(x)&=-2
+\end{align*}
+$$
+$e^{-2x}$ は $e^x$ と $-2x$ の合成関数（ $g(h(x))$ ）であるので，「合成関数の微分法」が使える．<br>
+積の微分法も正直公式ゲームなので，絶対暗記．
+$$
+\big(f(x)g(x)\big)^{\prime}=f^{\prime}(x)g(x)+f(x)g^{\prime}(x)
+$$
+<h3>解法</h3>
+$$
+\begin{align*}
+\big(xe^{-2x}\big)^{\prime}&=1\cdot e^{-2x}+x(e^{-2x})^{\prime}\cr\cr
+&=1\cdot e^{-2x}+x\bigg(\dfrac{de^{-2x}}{d(-2x)}\cdot\dfrac{d(-2x)}{dx}\bigg)\cr\cr
+&=e^{-2x}+x(e^{-2x}\cdot(-2))\cr\cr
+&=e^{-2x}-2xe^{-2x}\cr\cr
+&=e^{-2x}(1-2x)
+\end{align*}
+$$
+<h2>(4)</h2>
+$$
+e^{\arcsin x}
+$$
+<h3>考え方</h3>
+$\arcsin x$ は $\sin x$ の逆関数である．<br>
+$$
+y=\arcsin x\quad\Leftrightarrow\quad x=\sin y
+$$
+$\arcsin x$， $\arccos x$， $\arctan x$ の微分は<span style="color: red;">暗記必須</span>
+$$
+\begin{align*}
+(\arcsin x)^{\prime}&=\dfrac{1}{\sqrt{1-x^2}}\cr\cr
+(\arccos x)^{\prime}&=-\dfrac{1}{\sqrt{1-x^2}}\cr\cr
+(\arctan x)^{\prime}&=\dfrac{1}{1+x^2}
+\end{align*}
+$$
+$e^{\arcsin x}$ は $e^x$ と $\arcsin x$ の合成関数なので，これまでの知識を使うと問題なくできる．
+<h3>解法</h3>
+$$
+\begin{align*}
+\big(e^{\arcsin x}\big)^{\prime}&=\dfrac{de^{\arcsin x}}{d\arcsin x}\cdot\dfrac{d\arcsin x}{dx}\cr\cr
+&=e^{\arcsin x}\cdot\dfrac{1}{\sqrt{1-x^2}}\cr\cr
+&=\dfrac{e^{\arcsin x}}{\sqrt{1-x^2}}
+\end{align*}
+$$
+以上．
 </body>
 </html>
