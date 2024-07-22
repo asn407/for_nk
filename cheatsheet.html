@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- モバイルデバイスに対応させるメタタグ -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- KaTeX インストール -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<!-- スタイルの編集 -->
+<style>
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    .katex {
+        font-size: 1.0em;
+    }
+}
+h1, h2, h3, h4, h5, h6 {
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px;
+}
+body {
+    background-color: #FFF1E8;
+}
+</style>
+<title>NK</title>
+</head>
+<body>
+<!-- KaTeX 数式入力開始の文字指定 -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false }
+            ]
+        });
+    });
+</script>
+<h1>NKのために</h1>
+<a href="index.html">HOME</a>
+<h1>前提知識</h1>
+<h2>微分記号の話</h2>
+以下の数式はどれも同じ意味を示す．
+$$
+f^{\prime}(x)=\dfrac{df(x)}{dx}=\dfrac{d}{dx}f(x)
+$$
+
+$\dfrac{df(x)}{dx}$ は $f(x)$ を $x$ で微分することを表す．<br><br>
+よって，$f(x)=x^2$ を微分するときは以下のように書くことができる．
+$$
+\dfrac{d}{dx}x^2=2x
+$$
+また，これらは $x$ の微分に関する話であり，他の文字（例えば $a$ とか）で微分する場合は以下のように書く．
+$$
+\dfrac{d}{da}x^2=0
+$$
+また，基本的に $f^{\prime}(x)$ （プライム記号が付く場合）は $x$ で微分することを表すので注意．
+<h2>微分の公式</h2>
+<span style="color: red;">絶対暗記</span>
+<h3>合成関数の微分</h3>
+$$
+\dfrac{d}{dx}f(g(x))=\dfrac{df(x)}{dg(x)}\cdot\dfrac{dg(x)}{dx}
+$$
+※具体的な活用方法は<a href="fin/unit1.html">期末試験大問１(1)</a>を参照．
+<h3>積の微分</h3>
+$$
+\big(f(x)g(x)\big)^{\prime}=f^{\prime}(x)g(x)+f(x)g^{\prime}(x)
+$$
+<h3>商の微分</h3>
+$$
+\bigg(\dfrac{f(x)}{g(x)}\bigg)^{\prime}=\dfrac{f^{\prime}(x)g(x)-f(x)g^{\prime}(x)}{(g(x))^2}
+$$
+<h2>有名な関数の微分</h2>
+<span style="color: red;">絶対暗記</span>
+$$
+\begin{cases}
+\dfrac{d}{dx}\log |x|=\dfrac{1}{x}\cr\cr
+\dfrac{d}{dx}e^x=e^x\cr\cr
+\dfrac{d}{dx}\sin x=\cos x\cr\cr
+\dfrac{d}{dx}\cos x=-\sin x\cr\cr
+\dfrac{d}{dx}\tan x=\dfrac{1}{{\cos^2 x}}\cr\cr
+\dfrac{d}{dx}\arcsin x=\dfrac{1}{\sqrt{1-x^2}}\cr\cr
+\dfrac{d}{dx}\arccos x=-\dfrac{1}{\sqrt{1-x^2}}\cr\cr
+\dfrac{d}{dx}\arctan x=\dfrac{1}{1+x^2}
+\end{cases}
+$$
+まあ暗記するのもこれだけだし．<br>
+暗記しましょ．<br>
+<a href="index.html">HOME</a>
+</body>
