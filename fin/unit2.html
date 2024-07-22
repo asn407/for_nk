@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- モバイルデバイスに対応させるメタタグ -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- KaTeX インストール -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<!-- スタイルの編集 -->
+<style>
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    .katex {
+        font-size: 1.0em;
+    }
+}
+h1, h2, h3, h4, h5, h6 {
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px;
+}
+body {
+    background-color: #FFF1E8;
+}
+</style>
+<title>NK</title>
+</head>
+<body>
+<!-- KaTeX 数式入力開始の文字指定 -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    renderMathInElement(document.body, {
+        delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "$", right: "$", display: false }
+        ]
+    });
+});
+</script>
+<h1>NKのために</h1>
+<a href="../index.html">HOME</a>
+<h1>大問２</h1>
+関数 $f(x)=x\log x$ について，傾きが $1$ となる接線の方程式を求めよ．
+<h3>考え方</h3>
+あるグラフ（関数）において，微分したものが接線の傾きを示す方程式になる．<br><br>
+例えば， $f(x)=x^2$ の接線の傾きを求めたいとする．<br>
+$f^{\prime}(x)=2x$ であり，これが$f(x)$ の接線の傾きを求める方程式になる．<br><br>
+つまり，例えば $x=5$ における $f(x)=x^2$ の傾きを求めたいと思えば，
+$$
+f^{\prime}(5)=2\times 5=10
+$$
+となり，一発で求めることができる．<br>
+逆に，ある傾きになる $x$ を求めたいときにも $f^{\prime}(x)$ を使えばよい．<br><br>
+例えば， $f(x)=x^2$ の傾きが $1$ になる $x$ を求めたいとすると，
+$$
+f^{\prime}(x)=2\times x=1
+$$
+となり，この方程式を解けばよいだけなので，$x=\dfrac{1}{2}$ と求めることができる．<br><br>
+<h3>解法</h3>
+$f(x)=x\log x$ の微分を求める．<br>
+今回の単純な関数は $x$ と $\log x(x > 0)$ の積なので，積の微分公式を使う．
+$$
+\begin{align*}
+f^{\prime}(x)&=(x)^{\prime}\log x+x(\log x)^{\prime}\cr
+f^{\prime}(x)&=1\cdot\log x+x\cdot\dfrac{1}{x}\cr
+f^{\prime}(x)&=\log x+1
+\end{align*}
+$$
+したがって，傾きが $1$ になる $x$ を求める方程式は以下の通りになる．
+$$
+\log x+1=1
+$$
+これを解くと，
+$$
+\begin{align*}
+\log x&=0\cr
+x&=1
+\end{align*}
+$$
+また，この接線は $(x, y)=(1, f(1))$ を通るので，
+$$
+f(1)=1\cdot\log 1=0
+$$
+よって，求める接線の方程式は
+$$
+\begin{align*}
+y&=f^{\prime}(1)(x-a)+b\cr
+y&=1\cdot (x-1)+0\cr
+y&=x-1
+\end{align*}
+$$
+※ $(a, b)$ はある点と通る直線の座標．<br>
+直線は，傾きと一つの通る点が決まれば求めることができる．<br>
+傾きが分からなくても，二つの通る点が決まれば求めることもできる．<br>
+今回は接点の座標が通る点で，傾きは微分から求まった．<br>
+<a href="../index.html">HOME</a><br><br>
+</body>
+</html>
