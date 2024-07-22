@@ -1,11 +1,45 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<!-- モバイルデバイスに対応させるメタタグ -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- KaTeX インストール -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<!-- スタイルの編集 -->
+<style>
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    .katex {
+        font-size: 1.0em;
+    }
+}
+h1, h2, h3, h4, h5, h6 {
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px;
+}
+body {
+    background-color: #FFF1E8;
+}
+</style>
 <title>NK</title>
-<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<script src="katex_setup.js"></script>
+<!-- KaTeX 数式入力開始の文字指定 -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    renderMathInElement(document.body, {
+        delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "$", right: "$", display: false }
+        ]
+    });
+});
+</script>
 <h1>NKのために</h1>
 <a href="index.html">HOME</a>
 <h1>大問１</h1>
@@ -42,7 +76,7 @@ $$
 ここで， $\dfrac{df(A)}{dA}$ が何を表すのか考えて欲しい．<br><br>
 「関数 $f$ に $A$ を代入したものを $A$ で微分する」<br><br>
 それはつまり，「関数 $f$ に $x$ を代入したものを $x$ で微分する」と言い換えたって，行う操作は全く変わらないはず！！（文字が $A$ から $x$ に変わっただけ）<br><br>
-つまり $\dfrac{df(A)}{dA}$ だろうが $\dfrac{df(x)}{dx}$ だろうが $\dfrac{df(t)}{dt}$ だろうが $\dfrac{df(\tan x)}{d\tan x}$ だろうが $\dfrac{df(g(x))}{dg(x)}$ だろうがみんな揃って以下の計算結果になる．<br><br>
+つまり $\dfrac{df(A)}{dA}$ だろうが $\dfrac{df(x)}{dx}$ だろうが， $\dfrac{df(t)}{dt}$ だろうが $\dfrac{df(\tan x)}{d\tan x}$ だろうが $\dfrac{df(g(x))}{dg(x)}$ だろうがみんな揃って以下の計算結果になる．<br><br>
 ※今は $f(x)=\log |x|$ としているため，
 $$
 \begin{align*}
@@ -61,7 +95,7 @@ $$
 $$
 \dfrac{df(\Box)}{d\triangle}=\dfrac{df(\Box)}{d\Box}\cdot\dfrac{d\Box}{d\triangle}
 $$
-分数の約分と同じように， $d\Box$ が消えるような微分が「合成関数の微分法」と考えることもできる．
+分数の約分と同じように， $\Box$ が消えると考えると分かりやすいかも．
 <h3>解法</h3>
 $$
 \begin{align*}
@@ -154,6 +188,6 @@ $$
 &=\dfrac{e^{\arcsin x}}{\sqrt{1-x^2}}
 \end{align*}
 $$
-以上．
+以上．<a href="index.html">HOME</a>
 </body>
 </html>
