@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- モバイルデバイスに対応させるメタタグ -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- KaTeX インストール -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<!-- スタイルの編集 -->
+<style>
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    .katex {
+        font-size: 1.0em;
+    }
+}
+h1, h2, h3, h4, h5, h6 {
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px;
+}
+body {
+    background-color: #FFF1E8;
+}
+</style>
+<title>NK</title>
+</head>
+<body>
+<!-- KaTeX 数式入力開始の文字指定 -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false }
+            ]
+        });
+    });
+</script>
+<h1>NKのために</h1>
+<a href="../index.html">HOME</a>
+<h1>大問１</h1>
+次の関数を微分せよ．
+<h2>(1)</h2>
+$$
+\log \bigg|\dfrac{e^x-e^{-x}}{e^x+e^{-x}}\bigg|
+$$
+<h3>考え方</h3>
+いつものように，問題を分割する．
+$$
+\begin{align*}
+f(x)&=\log |x|\cr\cr
+g(x)&=\dfrac{e^x-e^{-x}}{e^x+e^{-x}}
+\end{align*}
+$$
+$f(x)$ の微分は簡単である．<br>
+$g(x)$ の微分も一見複雑そうに見えるけど，ただの分数関数の微分なのでこれも簡単である．<br>
+<h3>解法</h3>
+$$
+\begin{align*}
+\dfrac{d}{dx}\log \bigg|\dfrac{e^x-e^{-x}}{e^x+e^{-x}}\bigg|&=\dfrac{d\log |g(x)|}{dx}\cr\cr
+&=\dfrac{d\log |g(x)|}{dg(x)}\cdot\dfrac{dg(x)}{dx}\cr\cr
+&=\dfrac{1}{g(x)}\cdot\bigg(\dfrac{e^x-e^{-x}}{e^x+e^{-x}}\bigg)^{\prime}\cr\cr
+&=\dfrac{1}{\dfrac{e^x-e^{-x}}{e^x+e^{-x}}}\cdot\dfrac{(e^x-e^{-x})^{\prime}(e^x+e^{-x})-(e^x-e^{-x})(e^x+e^{-x})^{\prime}}{(e^x+e^{-x})^2}\cr\cr
+&=\dfrac{\bcancel{e^x+e^{-x}}}{e^x-e^{-x}}\cdot\dfrac{(e^x+e^{-x})(e^x+e^{-x})-(e^x-e^{-x})(e^x-e^{-x})}{\bcancel{(e^x+e^{-x})}(e^x+e^{-x})}\cr\cr
+&=\dfrac{e^{2x}+2+e^{-2x}-(e^{2x}-2+e^{-2x})}{e^{2x}-e^{-2x}}\cr\cr
+&=\dfrac{4}{e^{2x}-e^{-2x}}\cr\cr
+&=\dfrac{4}{e^{2x}-e^{-2x}}
+\end{align*}
+$$
+<h2>(2)</h2>
+$$
+\dfrac{x^2+1}{x+2}
+$$
+<h3>考え方</h3>
+くそざこ．<br>
+商の微分法を使う．<br><br>
+なお配布された解答例は間違えている模様．
+<h3>解法</h3>
+$$
+\begin{align*}
+\bigg(\dfrac{x^2+1}{x+2}\bigg)^{\prime}&=\dfrac{(x^2+1)^{\prime}(x+2)-(x^2+1)(x+2)^{\prime}}{(x+2)^2}\cr\cr
+&=\dfrac{2x(x+2)-(x^2+1)}{(x+2)^2}\cr\cr
+&=\dfrac{2x^2+4x-x^2-1}{(x+2)^2}\cr\cr
+&=\dfrac{x^2+4x-1}{(x+2)^2}
+\end{align*}
+$$
+<h2>(3)</h2>
+$$
+\sin x\cos x
+$$
+<h3>考え方</h3>
+くそざこ．<br>
+積の微分法を使う．<br><br>
+<h3>解法</h3>
+$$
+\begin{align*}
+(\sin x\cos x)^{\prime}&=(\sin x)^{\prime}\cos x+\sin x(\cos x)^{\prime}\cr\cr
+&=\cos x\cos x+\sin x(-\sin x)\cr\cr
+&=\cos^2 x-\sin^2 x\cr\cr
+&=\cos 2x
+\end{align*}
+$$
+<h2>(4)</h2>
+$$
+e^{\arccos x}
+$$
+<h3>考え方</h3>
+くそざこ．<br>
+合成関数の微分法を使う．<br><br>
+<h3>解法</h3>
+$$
+\begin{align*}
+(e^{\arccos x})^{\prime}&=\dfrac{de^{\arccos x}}{d\arccos x}\cdot\dfrac{d\arccos x}{dx}\cr\cr
+&=e^{\arccos x}\cdot\left(-\dfrac{1}{\sqrt{1-x^2}}\right)\cr\cr
+&=-\dfrac{e^{\arccos x}}{\sqrt{1-x^2}}
+\end{align*}
+$$
+<a href="index.html">HOME</a><br><br>
+</body>
+</html>
